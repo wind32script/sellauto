@@ -1,0 +1,55 @@
+this addAction ["Продать гражданский автомобиль", { 
+    params ["_target", "_caller"]; 
+    _object = nearestObjects [ _caller,[], 50 ];  
+  
+ { 
+ if  (_x isKindOf "Exile_Car_SUV_Orange")  then {  
+  _x call ExileServer_object_vehicle_remove;
+  deleteVehicle _x;
+  _caller setVariable ["ExileMoney",  ( _caller getVariable ["ExileMoney", 0]) + ( floor random [500000, 900000, 2500000] ) , true]; 
+  ["ErrorTitleAndText", ["Успех", str _money  ]] call ExileClient_gui_toaster_addTemplateToast; 
+  }; 
+ 
+ if  (_x isKindOf "CUP_C_Bus_City_CIV")  then {  
+  _x call ExileServer_object_vehicle_remove;
+  deleteVehicle _x;
+  _caller setVariable ["ExileMoney",  ( _caller getVariable ["ExileMoney", 0]) + ( floor random [500000, 900000, 2500000] ) , true]; 
+  ["ErrorTitleAndText", ["Успех", str _money  ]] call ExileClient_gui_toaster_addTemplateToast; 
+  }; 
+ 
+ if  (_x isKindOf "SUV_civ_01")  then {  
+  _x call ExileServer_object_vehicle_remove;
+  deleteVehicle _x;
+  _caller setVariable ["ExileMoney",  ( _caller getVariable ["ExileMoney", 0]) + ( floor random [500000, 900000, 2500000] ) , true]; 
+  ["ErrorTitleAndText", ["Успех", str _money  ]] call ExileClient_gui_toaster_addTemplateToast; 
+  }; 
+ 
+ if  (_x isKindOf "SUV_civ_04")  then {  
+  _x call ExileServer_object_vehicle_remove;
+  deleteVehicle _x;
+  _caller setVariable ["ExileMoney",  ( _caller getVariable ["ExileMoney", 0]) + ( floor random [500000, 900000, 2500000] ) , true]; 
+  ["ErrorTitleAndText", ["Успех", str _money  ]] call ExileClient_gui_toaster_addTemplateToast; 
+  }; 
+ 
+ if  (_x isKindOf "CUP_LADA_LM_CIV")  then {  
+  _x call ExileServer_object_vehicle_remove;
+  deleteVehicle _x;
+  _caller setVariable ["ExileMoney",  ( _caller getVariable ["ExileMoney", 0]) + ( floor random [500000, 900000, 2500000] ) , true]; 
+  ["ErrorTitleAndText", ["Успех", str _money  ]] call ExileClient_gui_toaster_addTemplateToast; 
+  }; 
+
+ if  (_x isKindOf "Ikarus_Govnodav_01")  then {  
+  _x call ExileServer_object_vehicle_remove;
+  deleteVehicle _x;
+  _caller setVariable ["ExileMoney",  ( _caller getVariable ["ExileMoney", 0]) + ( floor random [500000, 900000, 2500000] ) , true]; 
+  ["ErrorTitleAndText", ["Успех", str _money  ]] call ExileClient_gui_toaster_addTemplateToast; 
+  }; 
+  
+ if  (_x isKindOf "CUP_C_Golf4_whiteblood_Civ")  then {  
+  _x call ExileServer_object_vehicle_remove;
+  deleteVehicle _x;
+  _caller setVariable ["ExileMoney",  ( _caller getVariable ["ExileMoney", 0]) + ( floor random [500000, 900000, 2500000] ) , true]; 
+  ["ErrorTitleAndText", ["Успех", str _money  ]] call ExileClient_gui_toaster_addTemplateToast; 
+  };   
+ }forEach _object; 
+}];   
